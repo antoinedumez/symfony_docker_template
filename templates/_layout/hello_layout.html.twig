@@ -1,0 +1,20 @@
+{# Every page extending this layout will share this same code #}
+{% extends 'base.html.twig' %}
+
+{# From bas.html.twig #}
+{% block body %}
+
+    <div class="base-layout container-fluid p-0">
+        {% include './_components/_global_hello.html.twig' %}
+
+        <div class="d-flex flex-column bg-info bg-opacity-10">
+            {% block helloblock %}{% endblock %}
+
+            <div class="mb-5">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

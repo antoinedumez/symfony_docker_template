@@ -1,0 +1,60 @@
+{% extends '_layout/hello_layout.html.twig' %}
+
+{# From base.html.twig #}
+{% block title %}{% endblock %}
+
+{# From _layout/hello_layout.html.twig #}
+{% block helloblock %}
+    <a href="https://getbootstrap.com/docs/5.3/examples/heroes/">Code from here </a>
+{% endblock %}
+
+{# From _layout/hello_layout.html.twig #}
+{% block content %}
+    {# Heroes bootstrap #}
+    <div class="px-4 pt-5 my-5 text-center border-bottom">
+        <h1 class="display-4 fw-bold text-body-emphasis">
+            Here an example of how front-end work with bootstrap!
+        </h1>
+        <div class="col-lg-6 mx-auto">
+            {# How stimulus work, with data-controller #}
+            <p class="lead mb-4" data-controller="hello"></p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+                {# The  primary color is modified by scss assets/styles/app.scss #}
+                <button type="button"
+                        class="btn btn-primary btn-lg px-4 me-sm-3">
+                    Primary button
+                </button>
+                <button type="button"
+                        class="btn btn-outline-secondary btn-lg px-4">
+                    Secondary
+                </button>
+            </div>
+        </div>
+        <div class="overflow-hidden"
+             style="max-height: 30vh;">
+            <div class="container px-5">
+                {# How to import image from assets folder #}
+                <img
+                    src="{{ asset('build/images/hello/pokemon.jpg') }}"
+                    class="img-fluid border rounded-3 shadow-lg mb-4"
+                    alt="Example image"
+                    loading="lazy"
+                    width="700"
+                    height="500">
+
+            </div>
+        </div>
+    </div>
+    {# How to  #}
+    <h1>Import images from public directory </h1>
+    <img src="./images/pokemon.jpg" alt="">
+    <h1>Import a self component</h1>
+    {% include 'hello/_components/self_hello_component.html.twig' %}
+    <h1>Import and use Global Macros</h1>
+    {# TODO #}
+    <h1>Import and use self Macros</h1>
+    {# TODO #}
+
+
+
+{% endblock %}

@@ -28,4 +28,4 @@ We welcome contributions to improve this project template. If you have any feedb
 ## License
 
 This project template is licensed under the Beerware License. Please see the LICENSE file for more information: [LICENSE](LICENSE.md)
-![](../images/BeerWare_Logo.png)
+<img src="../images/BeerWare_Logo.png" alt="Nom de l'image" width="300">

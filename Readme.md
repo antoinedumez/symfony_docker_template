@@ -28,4 +28,4 @@ Licence
 
 Ce template de projet est sous licence Beerware. 
 Veuillez consulter le fichier LICENSE pour plus d'informations : [LICENSE](LICENSE.md)
-![](./wiki/images/BeerWare_Logo.png)
+<img src="./wiki/images/BeerWare_Logo.png" alt="Nom de l'image" width="300">

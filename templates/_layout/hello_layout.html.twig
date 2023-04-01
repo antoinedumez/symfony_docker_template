@@ -5,16 +5,13 @@
 {% block body %}
 
     <div class="base-layout container-fluid p-0">
-        {% include './_components/_global_hello.html.twig' %}
-
-        <div class="d-flex flex-column bg-info bg-opacity-10">
+        <div class="d-flex flex-column">
             {% block helloblock %}{% endblock %}
-
             <div class="mb-5">
                 {% block content %}{% endblock %}
             </div>
         </div>
     </div>
-
+    {# this component will be in every pages who extend this layout #}
+    {% include './_components/_bob_global_component.html.twig' %}
 {% endblock %}
-

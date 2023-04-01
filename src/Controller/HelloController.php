@@ -9,11 +9,16 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('', name: 'hello_')]
 class HelloController extends AbstractController
 {
-    #[Route('/', name: 'hello')]
+    #[Route('/', name: 'index')]
     public function index(): Response
     {
         return $this->render('hello/index.html.twig', [
             'controller_name' => 'HelloController',
         ]);
+    }
+    #[Route('/message', name: 'message')]
+    public function message(): Response
+    {
+        return $this->render('messages/example_message.html.twig');
     }
 }

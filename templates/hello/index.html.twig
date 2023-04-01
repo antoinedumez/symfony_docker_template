@@ -1,7 +1,12 @@
+{# Import global macros #}
+{% import "./_macros/_jumbotron_global_macros.html.twig" as global_hello_macros  %}
+{# Import component macros #}
+{% from './hello/_macros/_smalljumbotron_hello_macros.html.twig.twig' import small_jumbotron as small_jumbotron %}
+{# Wich Layout we choose #}
 {% extends '_layout/hello_layout.html.twig' %}
 
 {# From base.html.twig #}
-{% block title %}{% endblock %}
+{% block title %}Hello world!{% endblock %}
 
 {# From _layout/hello_layout.html.twig #}
 {% block helloblock %}
@@ -20,12 +25,15 @@
             <p class="lead mb-4" data-controller="hello"></p>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
                 {# The  primary color is modified by scss assets/styles/app.scss #}
+                <a href="{{ path('hello_message') }}">
+                    <button type="button"
+                            class="btn btn-primary btn-lg px-4 me-sm-3">
+                        Message page
+                    </button>
+                </a>
+
                 <button type="button"
-                        class="btn btn-primary btn-lg px-4 me-sm-3">
-                    Primary button
-                </button>
-                <button type="button"
-                        class="btn btn-outline-secondary btn-lg px-4">
+                        class="btn btn-outline-secondary btn-lg px-4 disabled">
                     Secondary
                 </button>
             </div>
@@ -45,16 +53,30 @@
             </div>
         </div>
     </div>
-    {# How to  #}
-    <h1>Import images from public directory </h1>
-    <img src="./images/pokemon.jpg" alt="">
-    <h1>Import a self component</h1>
-    {% include 'hello/_components/self_hello_component.html.twig' %}
-    <h1>Import and use Global Macros</h1>
-    {# TODO #}
-    <h1>Import and use self Macros</h1>
-    {# TODO #}
-
-
+    <div class="b-example-divider"></div>
+    <h1 class="display-4 fw-bold text-body-emphasis text-center">How To</h1>
+    <div class="container d-flex flex-column gap-2 px-4 py-5 ">
+        <div class="d-flex flex-column gap-4 mb-5">
+            <h2 class="pb-2 border-bottom">Import images from public directory</h2>
+            <img src="./images/pokemon.jpg" alt="">
+        </div>
+        <div class="d-flex flex-column gap-4 mb-5">
+            <h2 class="pb-2 border-bottom">Import a self component</h2>
+            {% include 'hello/_components/_patrick_hello_component.html.twig' %}
+        </div>
+        <div class="d-flex flex-column gap-4 mb-5">
+            <h2 class="pb-2 border-bottom">Import a global component</h2>
+            <p>Got to the layout to see how it works!</p>
+        </div>
+        <div class="d-flex flex-column gap-4 mb-5">
+            <h2 class="pb-2 border-bottom">Import and use Global Macros</h2>
+            {{ global_hello_macros.jumbotron('title', 'text', 'button_text') }}
+        </div>
+        <div class="d-flex flex-column gap-4 mb-5">
+            <h2 class="pb-2 border-bottom">Import and use component Macros</h2>
+            {{ small_jumbotron('title', 'text', 'button_text') }}
+        </div>
+    </div>
+    <div class="b-example-divider"></div>
 
 {% endblock %}

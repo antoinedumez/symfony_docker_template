@@ -13,8 +13,14 @@
             {# the js function who will be called when the event is triggered !! AND HIS CHILDRENS !! #}
             data-action="   mouseenter->onHover#handleMouseEnter
                             mouseleave->onHover#handleMouseLeave">
-        <button type="button" class="btn btn-primary" data-action="click->onClick#handleClick"> Cliquez-moi !</button>
-        <button type="button" class="btn btn-primary" data-onHover-target="hovered"> Target </button>
+        <button type="button"
+                class="btn btn-primary"
+                {# this action will only be on this button #}
+                data-action="click->onClick#handleClick"> Cliquez-moi !</button>
+        <button type="button"
+                class="btn btn-primary"
+                {# with this attribute, you can use hoveredTarget in the controller onHover #}
+                data-onHover-target="hovered"> Target </button>
     </div>
 
     {# a simple div destinate to be modified by stimulus #}

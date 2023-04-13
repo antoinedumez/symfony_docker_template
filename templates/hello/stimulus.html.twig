@@ -1,0 +1,24 @@
+{# Wich Layout we choose #}
+{% extends '_layout/hello_layout.html.twig' %}
+
+{# From base.html.twig #}
+{% block title %}Hello world!{% endblock %}
+
+
+{# From _layout/hello_layout.html.twig #}
+{% block content %}
+
+            {# the js controller who will be connected to this node !! AND HIS CHILDRENS !! #}
+    <div    data-controller="onClick onHover"
+            {# the js function who will be called when the event is triggered !! AND HIS CHILDRENS !! #}
+            data-action="   mouseenter->onHover#handleMouseEnter
+                            mouseleave->onHover#handleMouseLeave">
+        <button type="button" class="btn btn-primary" data-action="click->onClick#handleClick"> Cliquez-moi !</button>
+        <button type="button" class="btn btn-primary" data-onHover-target="hovered"> Target </button>
+    </div>
+
+    {# a simple div destinate to be modified by stimulus #}
+    <div id="changeMe"></div>
+
+
+{% endblock %}

@@ -11,8 +11,10 @@ services:
       - db-data:/var/lib/postgresql/data:rw
 
   app:
-    image: 8d26627a6ca017
+    image: 9a524772a90c934d06062
     ports:
       - "8080:80"
+    environment:
+      DATABASE_URL: postgres://${POSTGRES_USER:-symfony}:${POSTGRES_PASSWORD:-ChangeMe}@database:5432/${POSTGRES_DB:-app}
 volumes:
   db-data:

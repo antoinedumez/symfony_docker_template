@@ -21,4 +21,6 @@ COPY ./docker/apache.conf /etc/apache2/sites-available/000-default.conf
 WORKDIR /var/www
 RUN composer install && yarn install && yarn build
 
+ENTRYPOINT ["bash", "./docker/docker.sh"]
+
 EXPOSE 80

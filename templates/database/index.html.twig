@@ -1,0 +1,23 @@
+{# Import global macros #}
+{% import "./_macros/_jumbotron_global_macros.html.twig" as global_hello_macros  %}
+{# Import component macros #}
+{% from './hello/_macros/_smalljumbotron_hello_macros.html.twig.twig' import small_jumbotron as small_jumbotron %}
+{# Wich Layout we choose #}
+{% extends '_layout/hello_layout.html.twig' %}
+
+{# From _layout/hello_layout.html.twig #}
+{% block content %}
+    <a href="{{ path('database_add') }}">
+        <button type="button"
+                class="btn btn-primary btn-lg px-4 me-sm-3">
+            Add a test in database
+        </button>
+    </a>
+
+{{ dump(tests) }}
+
+    {% for test in tests %}
+    {{ test.test }}
+    {% endfor %}
+
+{% endblock %}

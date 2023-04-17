@@ -9,9 +9,18 @@ services:
       POSTGRES_USER: ${POSTGRES_USER:-symfony}
     volumes:
       - db-data:/var/lib/postgresql/data:rw
+  pgadmin:
+    container_name: pgadmin4_container_prod
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
 
   app:
-    image: 9a524772a90c934d06062
+    image: 7c04d0acc0c0883648c1c
     ports:
       - "8080:80"
     environment:
